@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
     struct RGBLedMatrixOptions options;
     struct RGBLedMatrix *matrix;
     struct LedCanvas *offscreen_canvas;
-    int width=64, height=32;
+    int width=128, height=64;
     int x, y, i;
     int sockfd; 
     struct sockaddr_in servaddr, cliaddr; 
@@ -47,9 +47,9 @@ int main(int argc, char **argv) {
     memset(&options, 0, sizeof(options));
     options.rows = 32;
     options.cols = 64;
-    options.chain_length = 1;
+    options.chain_length = 4;
     options.hardware_mapping="adafruit-hat-pwm";
-    options.pixel_mapper_config="Rotate:270";
+    options.pixel_mapper_config="BottomToTop-mapper; Rotate:270";
     options.multiplexing=2;
     runtime.gpio_slowdown=2;
 
